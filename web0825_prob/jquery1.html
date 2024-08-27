@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery1</title>
+</head>
+
+<body>
+    <h1>Jquery1 example</h1>
+    <input type="text" id="write" />
+    <button id="btn">Click</button>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+        // $: selector 문서에서 가져오는 경우, 선택자
+        $(document).ready(function () { // jquery 입력한 값 alert 문구로 띄우기
+            $('#btn').click(function () { // $('#btn') -> document.querySelector('#btn')
+                // .click 클릭 메서드
+                // function() {} 자바 익명객체와 유사한 구조
+                const vv = $('#in').val();
+                alert(vv);
+            });
+        });
+    </script>
+</body>
+
+</html>

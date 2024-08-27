@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #data, #newContainer {
+            width: 470px;
+            height: 80px;
+            border: 2px solid rebeccapurple;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="data">dropbox1</div>
+    <div id="newContainer">dropbox2</div>
+    <img draggable="true" id="item1" src="img/img1.jpg" width="100px" height="80px"></img>
+    <img draggable="true" id="item2" src="img/img2.jpg" width="100px" height="80px"></img>
+    <img draggable="true" id="item3" src="img/img3.jpg" width="100px" height="80px"></img>
+    <img draggable="true" id="item4" src="img/img4.jpg" width="100px" height="80px"></img>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#data, #newContainer").on("dragover", function(e) {
+                e.preventDefault();
+            });
+
+            $("#item1, #item2, #item3, #item4").on("dragstart", function(e) {
+                e.originalEvent.dataTransfer.effectAllowed = 'move';
+                e.originalEvent.dataTransfer.setData("text", e.target.id);
+            });
+
+            $("#data, #newContainer").on("drop", function(e) {
+                e.preventDefault();
+                const data = e.originalEvent.dataTransfer.getData("text");
+                $(this).append($("#" + data));
+            });
+        })
+    </script>
+</body>
+</html>

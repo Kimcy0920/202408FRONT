@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <input type="text" id="write" />
+    <button id="btn">클릭</button>
+    <div id="data"></div>
+    <script>
+        const button = document.querySelector('#btn');
+
+        button.addEventListener('click', () => {
+            const div = document.querySelector('#data');
+            const text = document.querySelector('#write');
+            console.log(text.value);
+            const p = document.createElement('p');
+            const li = document.createElement('li');
+            const button = document.createElement('button');
+            button.textContent = 'Del';
+            li.innerText = write.value;
+            write.value = "";
+            li.appendChild(button);
+            p.appendChild(li);
+            div.appendChild(p);
+
+            button.addEventListener('click', () => {
+                div.removeChild(p);
+            });
+        });
+
+    </script>
+</body>
+
+</html>

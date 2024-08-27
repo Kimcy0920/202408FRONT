@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<!--
+모든 지역 변수를 const, let으로 선언
+변수를 재할당하지 않는 한, 기본적으로 const 사용
+var키워드 사용 X
+-->
+
+    <script>
+        // const a = 10;
+        // console.log(a);
+        // // a = 20;
+        // // console.log(a);
+
+        // let b = 20;
+        // console.log(b);
+        // b = 30;
+        // console.log(b);
+        
+        const name = '빗치';
+        const age = 20;
+        const msg = `나는 ${name}입니다. 저의 경험횟수는 ${age}번 입니다.`;
+        console.log(msg);
+
+        // function add(a, b) {
+        //     return a + b; // 같은 코드1
+        // }
+        // const result = add(10, 20);
+        // console.log(result);
+
+        const func1 = function (a, b) {
+            return a + b; // 같은 코드2
+        }
+        console.log(func1(10, 20));
+        
+        const func2 = (a, b) => a + b; // 람다식과 유사함. 중괄호 생략함
+        // const func2 = (a, b) => {
+        //     a + b;
+        // }
+        console.log(func2(10, 20));
+    </script>
+</body>
+</html>

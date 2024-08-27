@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Jquery1 example</h1>
+    <input type="text" id="write" />
+    <button id="btn">Click</button>
+    <div id="data"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#btn').click(function () {
+                const write = $('#write').val();
+                console.log(write);
+                
+                const div = $('#data');
+                const p = $('<p></p>');
+                const li = $('<li></li>');
+                const button = $('<button>del</button>');
+
+                li.text(write);
+                li.append(button);
+                p.append(li);
+                div.append(p);
+                $('#write').val("");
+
+                button.on("click", function() {
+                    div.remove();
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

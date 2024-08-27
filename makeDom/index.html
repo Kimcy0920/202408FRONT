@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const div = document.createElement('div');
+        const p = document.createElement('p');
+        const h2 = document.createElement('h2');
+        // createElement 태그 만들기
+        div.appendChild(h2); // div의 자식으로 넣음
+        div.appendChild(p); // div - h2 - p 순서대로 들어감
+        h2.textContent = 'Title';
+        p.textContent = 'Hello World';
+        console.log(div);
+        document.body.appendChild(div); // 웹 화면에 body에 div를 넣고 출력
+        /*
+        doc.body <= body 태그안에 div 붙이기
+        
+        <div>
+            <h2></h2>
+            <p></p>
+        </div>
+        */
+    </script>
+</body>
+
+</html>

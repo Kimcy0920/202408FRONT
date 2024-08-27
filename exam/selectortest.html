@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="list">
+<li class="item1">item1</li>
+<li class="item2">item2</li>
+<li class="item3">item3</li>
+<li class="item4">item4</li>
+    </ul>
+
+    <script>
+        // const list = document.querySelector(".list");
+        const items = document.querySelector(".list").children; // line17과 같은코드
+        console.log(items[0]); // 리스트에 넣은걸 출력
+
+        const item2 = document.querySelector('.item2');
+
+        item2.style.color = 'red';
+        item2.innerHTML = 'Hello World';
+
+        console.log(item2.parentElement); // item2의 부모를 출력
+        console.log(item2.previousElementSibling); // item2의 앞을 출력 -> item1
+        console.log(item2.nextElementSibling); // item2의 뒤를 출력 -> item3
+
+    </script>
+</body>
+</html>

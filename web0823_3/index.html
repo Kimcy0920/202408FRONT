@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="https://www.youtube.com" target="_blank">누르시오</a>
+
+    <script>
+        const link = document.querySelector("a");
+
+        link.addEventListener("click", function (e) {
+            e.preventDefault(); // 이벤트 기본 기능 실행을 막는 명령어
+            alert("Link clicked");
+            console.log("Link clicked");
+        });
+    </script>
+</body>
+</html>

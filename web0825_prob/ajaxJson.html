@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajaxJson</title>
+</head>
+
+<body>
+    <h1>ajax_Json Exam</h1>
+    <input type="text" id="aaa" />
+    <button id="btn">Click</button>
+    <button id="fetchData">Fetch Data</button>
+    <div id="dataDisplay"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#btn').click(function () {
+                const vv = $('#aaa').val();
+                alert(vv);
+            });
+            $('#fetchData').click(function () {
+                $.getJSON("http://localhost:4000/posts", function(data) {
+                    $('#dataDisplay').html(JSON.stringify(data));
+                }).fail(function() {
+                    alert('Error fetching data.');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

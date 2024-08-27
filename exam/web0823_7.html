@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const myProfile = {
+            name: '김머용',
+            age: 19,
+            job: '빨기'
+        };
+        const {name: name1, job: job1} = myProfile; // 객체 분할 대입
+        // name의 변수명으로 name1, job의 변수명으로 job1
+        const msg = `나는 ${myProfile.name}이고, ${myProfile.age}살이며, 주특기는 ${myProfile.job}입니다.`;
+        console.log(msg);
+        console.log(name1, job1);
+        // name, job은 undefind / name1, job1로 출력
+    </script>
+</body>
+</html>

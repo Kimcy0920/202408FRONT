@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="" href=""/>
+    <style>
+        #data {
+            width: 450px;
+            height: 100px;
+            border: 2px solid rebeccapurple;
+        }
+    </style>
+</head>
+<body>
+    <div id="data" ondrop="drop(event)" ondragover="allowDrop(event)">drop here</div>
+    <p draggable="true" id="item" ondragstart="drag(event)">drag me</p>
+    <script>
+        function allowDrop(e) {
+            e.preventDefault();
+        }
+        function drag(e) {
+            e.dataTransfer.effectAllowed = 'move';
+            console.log(e.target.id); // --> item 출력
+            e.dataTransfer.setData("text", e.target.id); // setData("text") 
+            // text에 id: item 저장
+        }
+        function drop(e) {
+            e.preventDefault();
+            const data = e.dataTransfer.getData("text"); // getData("text")
+            // data에 text에 저장된 id: item 대입
+            console.log(data); // --> item 출력
+            e.target.appendChild(document.getElementById(data));
+            console.log(e.target); // --> line17 div태그 출력
+        }
+        const item = document.querySelector("#item");
+
+        item.addEventListener("dragstart", (e) => { // event 발생 시키는 용도
+            // console.log(e);
+            // console.log("드래그를 시작하면 발생하는 이벤트");
+        });
+    </script>
+</body>
+</html>
