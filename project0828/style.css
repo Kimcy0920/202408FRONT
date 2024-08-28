@@ -1,0 +1,18 @@
+form input {
+    width: 33%;
+    height: 30px;
+}
+
+form button {
+    width: 30%;
+    height: 35px;
+}
+
+
+h1 {
+    font-size: 100px;
+    color: coral;
+}
+div {
+    border: 3px solid burlywood;
+}
