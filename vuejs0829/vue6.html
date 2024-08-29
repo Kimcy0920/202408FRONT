@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Vue.js와 연결하는 요소 -->
+    <div id="app">
+        <input type="number" v-model.number="dan" placeholder="단을 입력하세요.">
+        <!-- type="number" 우측 버튼 -->
+        <button @click="gugudan">*</button>
+        <ul>
+            <li v-for="item in gugu">{{ item }}</li>
+        </ul>
+        <p v-if="errorMessage">{{ errorMessage }}</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+    <script>
+        // Vue 인스턴스
+        var app = new Vue({
+            el: '#app', // <div id="app">
+            data: {
+                dan: 0, // v-model
+                gugu: [],
+                errorMessage: ''
+            },
+            methods: {
+                gugudan() {
+                    if(this.dan <= 0) {
+                        this.errorMessage = '0과 음수는 입력할 수 없습니다.'; // v-if
+                        this.gugu = [];
+                    } else {
+                        this.errorMessage = ''; // v-if
+                        this.gugu = [];
+                        for (let i=1; i<=9; i++) {
+                            this.gugu.push(`${this.dan} * ${i} = ${this.dan*i}`);
+                        }
+                    }
+                }
+            }
+        })
+
+/*
+        new Vue ({
+            el: 어느 HTML요소를 연결할 것인지
+            data: 어떤 데이터인지
+            method: 어떤 처리를 하는지
+            computed: 어느 데이터를 사용하여 계산하는지
+            watch: 어느 데이터를 감시하는지
+        })
+*/
+    </script>
+</body>
+</html>
