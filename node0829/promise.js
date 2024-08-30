@@ -4,7 +4,7 @@ let promise = new Promise((resolve, reject) => {
         resolve('Success');
 
     } else {
-        PromiseRejectionEvent('Failed');
+        reject('Failed');
     }
 });
 

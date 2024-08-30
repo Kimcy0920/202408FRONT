@@ -1,0 +1,3 @@
+Mysql <---> 8080:Tomcat <--index.html--> 브라우저
+
+3000:Json/db.json <--gppd--> 5503:web <---> 브라우저
