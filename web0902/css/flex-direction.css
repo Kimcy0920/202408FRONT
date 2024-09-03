@@ -9,16 +9,16 @@ main {
 	height:100vh;
 	background:lightcyan;
 }
-section {
-	border:10px solid blue;
-}
+
 section article {
 	width:100px;
 	height:100px;   
 	background:aqua;
 	border:1px solid #000;
 }
+
 section {
-	border:10px solid blue;
+	border: 10px solid blue;
 	display:inline-flex;
+	flex-direction:column;
 }
